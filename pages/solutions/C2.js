@@ -1,0 +1,23 @@
+import { makeProductPage } from './shared.js';
+
+export default makeProductPage({
+  code: 'C2',
+  tag: 'Hardware-agnostic platform',
+  title: 'The CUSS 2 platform. Yours, on whatever hardware you already own.',
+  lede: "A full IATA RP 1706c platform that runs on every major airport kiosk and bag-drop in the field today. Serves CUSS 1 and CUSS 2 airlines side-by-side, so the airlines on your kiosks don't have to migrate on your timeline.",
+  features: [
+    { tag: 'Hardware', title: "Every vendor we've seen.", body: 'CX200, SITA S4, IER 919, KK-12, TP120 — and most of the rest. The platform abstracts the device layer so the hardware vendor stops mattering.' },
+    { tag: 'Coexistence', title: 'CUSS 1 + CUSS 2 in the same bank.', body: 'Legacy airlines keep running while modern airlines onboard. The CUSS 1.X plugin auto-loads only when a legacy carrier needs it.' },
+    { tag: 'Launcher', title: 'Deno-powered cloud bootstrap.', body: 'The EAI Launcher pulls platform versions and plugins from the cloud on boot. No re-imaging. Different terminals can run different versions, governed centrally.' },
+    { tag: 'Telemetry', title: 'Every kiosk, one Portal.', body: 'Health, paper, recovery, session count, error codes — streamed to the Portal in real time. Build dashboards. Page yourself on what matters.' },
+  ],
+  included: 'The platform binary, the Launcher, all bundled peripheral drivers, the CUSS 1.X compatibility plugin, and a Portal Manager seat.',
+  specs: [
+    ['Standard', 'IATA RP 1706c · CUSS 2.4.x'],
+    ['Hardware', 'AEA/ITPS printers · all major scanners · most kiosks'],
+    ['CUSS 1.x', 'RP 1706b airlines supported side-by-side'],
+    ['Security', 'TLS 1.2+ · OAuth 2.0 · OWASP ASVS L2'],
+    ['Latency', 'P99 < 120ms peripheral round-trip'],
+    ['Updates', 'Cloud-delivered, per-terminal staged'],
+  ],
+});

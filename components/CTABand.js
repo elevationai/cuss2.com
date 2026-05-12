@@ -1,0 +1,17 @@
+export default {
+  template: `
+    <section style="padding-top:0;">
+      <div class="wrap">
+        <div style="background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 60px 40px; text-align:center; position:relative; overflow:hidden;">
+          <div class="blob a" style="width:300px; height:300px; top:-100px; left:-100px;"></div>
+          <div class="blob b" style="width:300px; height:300px; bottom:-100px; right:-100px;"></div>
+          <div style="position:relative; z-index:1;">
+            <h2 class="display" style="max-width: 22ch; margin: 0 auto;">Ready to move forward on <span style="color:var(--accent);">CUSS 2?</span></h2>
+            <p class="lead" style="margin: 20px auto 28px; max-width: 56ch;">Join the waitlist and an engineer on our team will follow up within 48 hours. No sales process — just a direct conversation about your deployment.</p>
+            <a href="/waitlist" class="btn btn-primary btn-lg">Join the waitlist <span aria-hidden>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  `
+};

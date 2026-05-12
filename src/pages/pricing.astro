@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import PricingWidget from '../components/PricingWidget.vue';
+import CTABand from '../components/CTABand.astro';
+
+const faqs = [
+  { q: 'Do I need separate licenses for CUSS 1 and CUSS 2 airlines on the same kiosk?', a: 'No. One C2-Platform license covers every airline running on that kiosk, regardless of which CUSS version each carrier targets.' },
+  { q: 'Can I downgrade or revoke licenses?', a: 'Anytime. From the Portal, in a click. Pro-rated to the day.' },
+  { q: 'Is there a setup fee?', a: 'Not on Free or Starter. Enterprise deals occasionally include a one-off integration fee when a custom DCS or peripheral is involved — always quoted in writing first.' },
+  { q: 'What happens at the end of the Bridge2to1 first-year inclusion on Starter?', a: "You either keep it (pricing is the same as any other Starter license), or your airports have finished migrating and you don't need it anymore. Either way, no surprise renewal." },
+  { q: 'Can early customers lock in pricing?', a: 'Yes. Anyone on the waitlist today gets a 24-month price lock at launch rates.' },
+];
+---
+<Base
+  title="Pricing · Elevation AI"
+  description="Honest, per-machine pricing for CUSS 2. One license per running instance, per account. All four solutions free on the Free tier — no card required."
+>
+  <PricingWidget client:load />
+
+  <section>
+    <div class="wrap">
+      <div class="split-2">
+        <div>
+          <h2 class="display" style="margin-top:18px;">Common questions.</h2>
+        </div>
+        <div>
+          {faqs.map(q => (
+            <details style="border-top:1px solid var(--line); padding:20px 0;">
+              <summary style="cursor:pointer; font-weight:500; font-size:17px;">{q.q}</summary>
+              <p class="muted" style="margin-top:10px; font-size:15px;">{q.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABand />
+</Base>

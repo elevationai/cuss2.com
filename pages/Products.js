@@ -1,0 +1,75 @@
+import { productList } from '../data.js';
+
+export default {
+  setup() {
+    return { products: productList };
+  },
+  computed: {
+    compareRows() {
+      return [
+        { name: 'Elevated Tagging', tag: 'Kiosk app', best: 'Airlines without an app team', runs: 'Any CUSS 2 platform', license: 'Per machine, per account' },
+        { name: 'Bridge2to1', tag: 'Compatibility layer', best: 'Airlines waiting on airports', runs: 'Inside your CUSS 2 app', license: 'Per machine, per account' },
+        { name: 'C2-Platform', tag: 'Kiosk platform', best: 'Airports modernizing hardware-first', runs: 'Any kiosk hardware', license: 'Per machine, per account' },
+        { name: 'Platform-Monitor', tag: 'Observability', best: 'Anyone with kiosks / sensors / belts', runs: 'Anything that can ping a URL', license: 'Per machine, per account' },
+      ];
+    }
+  },
+  template: `
+    <section class="hero" style="padding-bottom:60px;">
+      <div class="blob a" style="width:500px; height:500px; top:-80px; right:-100px;"></div>
+      <div class="wrap hero-inner">
+        <h1 class="display" style="margin-top:24px;">The right solution for <span style="color:var(--accent);">where you are</span>.</h1>
+        <p class="lead" style="margin-top:24px;">Whether you're an airline migrating an app, an airport modernizing a fleet, or an operations team that needs visibility — each solution addresses a specific challenge. They work independently, and all report to the same cloud Portal.</p>
+      </div>
+    </section>
+
+    <section style="padding-top:20px;">
+      <div class="wrap">
+        <div class="product-grid">
+          <a v-for="p in products" :key="p.id" :href="'/solutions/'+p.id" class="product-card" style="min-height:280px;">
+            <div class="row" style="justify-content:space-between; align-items:flex-start;">
+              <div class="pc-mark">{{ p.code }}</div>
+              <span class="card-tag">{{ p.tag }}</span>
+            </div>
+            <h3>{{ p.name }}</h3>
+            <p class="muted" style="font-size:15px;">{{ p.summary }}</p>
+            <div class="row" style="justify-content:space-between; margin-top:auto;">
+              <span class="mono" style="color:var(--accent);">{{ p.stat }}</span>
+              <span class="btn-text">Open product →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="split-2" style="margin-bottom:40px;">
+          <div>
+            <h2 class="display" style="margin-top:18px;">Which one is for you?</h2>
+          </div>
+          <p class="lead">A quick compare across what each product does, who it's for, and what it talks to.</p>
+        </div>
+        <div class="card" style="padding:0;">
+          <div class="spec-row" style="grid-template-columns: 1.2fr 1fr 1fr 1fr; padding:18px 24px;">
+            <div class="label">Solution</div>
+            <div class="label">Best for</div>
+            <div class="label">Runs on</div>
+            <div class="label">Licensed by</div>
+          </div>
+          <div v-for="p in compareRows" :key="p.name" class="spec-row" style="grid-template-columns: 1.2fr 1fr 1fr 1fr; padding:20px 24px; align-items:center;">
+            <div>
+              <div style="font-weight:500;">{{ p.name }}</div>
+              <div class="muted" style="font-size:13px;">{{ p.tag }}</div>
+            </div>
+            <div class="muted" style="font-size:14px;">{{ p.best }}</div>
+            <div class="muted" style="font-size:14px;">{{ p.runs }}</div>
+            <div class="muted" style="font-size:14px;">{{ p.license }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTABand />
+  `
+};

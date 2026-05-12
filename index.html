@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <base href="/" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elevation AI — CUSS 2 for airlines & airports</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,9 +13,6 @@
 <body>
   <div id="app" data-screen-label="CUSS2 site"></div>
 
-  <!-- Vue 3 (buildless) -->
-  <script src="https://unpkg.com/vue@3.5.13/dist/vue.global.prod.js"></script>
-  <script src="app.js"></script>
-  <script src="pages.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

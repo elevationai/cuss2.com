@@ -1,0 +1,14 @@
+export default {
+  template: `
+    <section class="hero">
+      <div class="wrap">
+        <h1 class="display" style="margin-top:18px;">That page is <span style="color:var(--accent);">at another gate</span>.</h1>
+        <p class="lead" style="margin-top:24px;">Try the products page, the pricing page, or just go home.</p>
+        <div class="row" style="margin-top:32px;">
+          <a href="/" class="btn btn-primary">Home</a>
+          <a href='/solutions' class="btn btn-ghost">Solutions</a>
+        </div>
+      </div>
+    </section>
+  `
+};

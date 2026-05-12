@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import CTABand from '../components/CTABand.astro';
+---
+<Base
+  title="About · Elevation AI"
+  description="Two co-founders. A decade building airport self-service software. CUSS 2 applications in production for over six years across 50+ airports."
+>
+  <section class="hero" style="padding-bottom:60px;">
+    <div class="blob a" style="width:500px; height:500px; top:-80px; left:-100px;"></div>
+    <div class="wrap hero-inner">
+      <h1 class="display" style="margin-top:18px;">We help airlines and airports <span style="color:var(--accent);">stop waiting on each other</span>.</h1>
+      <p class="lead" style="margin-top:24px; max-width:60ch;">We've been building CUSS 2 applications for over a decade. Our software has been running in production airports for more than six years — longer than most of the industry has been paying attention to the standard.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <h2 class="display" style="margin-top:14px; max-width:22ch;">Two co-founders. A decade building airport self-service software.</h2>
+
+      <div style="margin-top:48px; display:grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div class="card" style="padding:32px; display:flex; flex-direction:column; gap:18px;">
+          <div style="width:120px; height:120px; border-radius:50%; background: var(--bg-3); border:2px solid var(--accent); display:grid; place-items:center; font-family: var(--font-mono); font-size:28px; color: var(--accent);">WK</div>
+          <div>
+            <div style="font-size:24px; font-weight:500;">William Kapke</div>
+            <div class="mono" style="color: var(--accent); font-size:13px; margin-top:4px;">Co-Founder · San Francisco, CA</div>
+          </div>
+          <p class="muted" style="font-size:15px;">A key contributor to the IATA RP 1706c specification. William has spent years inside the IATA working group helping write the standard the industry is now migrating to — and has been building software against it throughout.</p>
+          <div class="row" style="margin-top:auto;">
+            <span class="tag">CUSS Task Force</span>
+            <span class="tag">IATA WG</span>
+          </div>
+        </div>
+
+        <div class="card" style="padding:32px; display:flex; flex-direction:column; gap:18px;">
+          <div style="width:120px; height:120px; border-radius:50%; background: var(--bg-3); border:2px solid var(--accent); display:grid; place-items:center; font-family: var(--font-mono); font-size:28px; color: var(--accent);">ST</div>
+          <div>
+            <div style="font-size:24px; font-weight:500;">Steven Tate</div>
+            <div class="mono" style="color: var(--accent); font-size:13px; margin-top:4px;">Co-Founder · Denver, CO</div>
+          </div>
+          <p class="muted" style="font-size:15px;">Built and led engineering teams responsible for some of the most widely deployed check-in software in North American airports. The operator-first approach in everything we build comes directly from that experience.</p>
+          <div class="row" style="margin-top:auto;">
+            <span class="tag">Airport IT</span>
+            <span class="tag">Engineering</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="lead" style="margin-top:36px; text-align:center; max-width:64ch; margin-inline:auto;">A decade building airport self-service technology. CUSS 2 applications running in production airports for more than six years.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="bento">
+        <div class="card wide" style="padding:40px;">
+          <h2 class="display" style="margin-top:14px; max-width:24ch;">A decade in production. Not a prototype.</h2>
+          <p class="muted" style="margin-top:14px; max-width:64ch; font-size:16px;">We have been building CUSS 2 applications since before most of the industry recognized it as the direction. Our software has been running in shared-use airport kiosks across more than 50 airports for over six years. Elevation AI is that same team, that same software, and that same commitment — now as an independent company focused entirely on making CUSS 2 accessible to every airline and airport.</p>
+        </div>
+        <div class="card">
+          <div class="big-num">6<span style="font-size:.5em; color:var(--ink-3);">+ yrs</span></div>
+          <div class="card-tag" style="margin-top:14px;">CUSS 2 in production</div>
+        </div>
+        <div class="card">
+          <div class="big-num">DEN</div>
+          <div class="card-tag" style="margin-top:14px;">Denver, Colorado HQ</div>
+        </div>
+        <div class="card">
+          <div class="big-num">IATA</div>
+          <div class="card-tag" style="margin-top:14px;">Strategic Partner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="split-2">
+        <div>
+          <h2 class="display" style="margin-top:18px;">What we believe.</h2>
+        </div>
+        <div class="stack">
+          <div class="card">
+            <h3 class="display">Standards are for everyone.</h3>
+            <p class="muted" style="margin-top:8px; font-size:15px;">We contributed to RP 1706c so the spec wouldn't belong to any one vendor. We won't gate compliance behind our solutions.</p>
+          </div>
+          <div class="card">
+            <h3 class="display">Operators get the wheel.</h3>
+            <p class="muted" style="margin-top:8px; font-size:15px;">Every solution ships with an operator UI before it ships with a developer SDK. The people running the kiosks should never need a console.</p>
+          </div>
+          <div class="card">
+            <h3 class="display">Migration is a graceful curve.</h3>
+            <p class="muted" style="margin-top:8px; font-size:15px;">Big-bang cutovers fail. Our solutions are designed to coexist with what you already have — so you can move on your own terms.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABand />
+</Base>

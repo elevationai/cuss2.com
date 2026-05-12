@@ -1,0 +1,370 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Design System · Elevation AI">
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="hero" style="padding-bottom:60px;">
+    <div class="blob a" style="width:500px;height:500px;top:-80px;right:-100px;"></div>
+    <div class="grid-bg"></div>
+    <div class="wrap hero-inner">
+      <div class="row" style="margin-bottom:24px;">
+        <span class="tag"><span class="dot"></span> Living guide</span>
+      </div>
+      <h1 class="display">Design System.</h1>
+      <p class="lead" style="margin-top:20px;">Tokens, components, and patterns for the CUSS 2 marketing site.</p>
+    </div>
+  </section>
+
+  <!-- ── Color Palette ─────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">01 · Color Palette</div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:12px;">
+        {[
+          { name: 'Void Navy',      hex: '#0a0e18', border: true  },
+          { name: 'Elevated Navy',  hex: '#121828', border: true  },
+          { name: 'Active Navy',    hex: '#1a2138', border: true  },
+          { name: 'Hairline',       hex: '#232c46', border: false },
+          { name: 'Soft Hairline',  hex: '#2f3a59', border: false },
+          { name: 'Bright Ink',     hex: '#ebeef7', border: false },
+          { name: 'Muted Ink',      hex: '#a8b1cb', border: false },
+          { name: 'Faint Ink',      hex: '#6e7793', border: false },
+          { name: 'Electric Cyan',  hex: '#6ad1ff', border: false },
+          { name: 'Cyan Ink',       hex: '#001423', border: true  },
+          { name: 'Cyan Whisper',   hex: '#6ad1ff1a', border: true },
+          { name: 'Periwinkle',     hex: '#8fb6ff', border: false },
+          { name: 'Signal Green',   hex: '#7ee5b0', border: false },
+          { name: 'Alert Red',      hex: '#ff8a8a', border: false },
+        ].map(s => (
+          <div>
+            <div style={`height:120px;border-radius:10px;background:${s.hex};${s.border ? 'border:1px solid var(--line-2);' : ''}`}></div>
+            <div class="mono" style="font-size:11px;margin-top:10px;color:var(--ink);">{s.name}</div>
+            <div class="mono" style="font-size:10px;margin-top:3px;color:var(--ink-3);">{s.hex}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Typography ────────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">02 · Typography</div>
+      <div class="stack">
+
+        <div class="card">
+          <div class="card-tag">Display · Architects Daughter · used for all headings</div>
+          <div class="display" style="font-size:clamp(40px,5vw,72px);margin-top:16px;line-height:1.04;">Architects Daughter</div>
+          <div style="margin-top:32px;border-top:1px solid var(--line);padding-top:24px;display:flex;flex-direction:column;gap:16px;">
+            <div>
+              <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.12em;">H1 · clamp(40px, 6vw, 92px)</span>
+              <h1 style="margin-top:6px;">Modern self-service.</h1>
+            </div>
+            <div>
+              <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.12em;">H2 · clamp(30px, 4vw, 56px)</span>
+              <h2 style="margin-top:6px;">Modern self-service.</h2>
+            </div>
+            <div>
+              <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.12em;">H3 · clamp(22px, 2.6vw, 32px)</span>
+              <h3 style="margin-top:6px;">Modern self-service.</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Body · Inter Tight · all prose, nav, UI text</div>
+          <p class="lead" style="margin-top:16px;">Elevation AI builds the CUSS 2 infrastructure airports and airlines actually want to run. We handle the standard so your team can focus on the operation.</p>
+          <p style="margin-top:16px;font-size:15px;color:var(--ink);">Regular body text at 15px. Used for card descriptions, FAQ answers, and supporting copy throughout the site. Line height 1.55, antialiased.</p>
+          <p class="muted" style="margin-top:12px;font-size:14px;">Muted body text at 14px — tier descriptions, list items, secondary information.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-tag">Mono · JetBrains Mono · labels, data, tags, readouts</div>
+          <div class="row" style="margin-top:16px;flex-wrap:wrap;gap:12px;">
+            {['CARD-TAG', 'SPEC-LABEL', 'TIER-NAME', 'STATUS', 'IATA RP 1706C', '69 LOCATIONS', '● LIVE FLEET', 'ET · KIOSK APP'].map(label => (
+              <span class="mono" style="font-size:11px;letter-spacing:.14em;padding:6px 12px;background:var(--bg-3);border:1px solid var(--line);border-radius:6px;color:var(--ink-2);">{label}</span>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Buttons ───────────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">03 · Buttons</div>
+      <div class="card">
+        <div class="row" style="flex-wrap:wrap;gap:24px;align-items:flex-end;">
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+            <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.1em;">PRIMARY</span>
+            <a href="#" class="btn btn-primary">Get a license <span aria-hidden>→</span></a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+            <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.1em;">PRIMARY LG</span>
+            <a href="#" class="btn btn-primary btn-lg">Join the waitlist <span aria-hidden>→</span></a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+            <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.1em;">GHOST</span>
+            <a href="#" class="btn btn-ghost">See pricing</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+            <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.1em;">GHOST LG</span>
+            <a href="#" class="btn btn-ghost btn-lg">See pricing</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+            <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.1em;">TEXT LINK</span>
+            <a href="#" class="btn-text">Read more</a>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:24px;font-size:13px;padding-top:20px;border-top:1px solid var(--line);">Primary: lifts 1px + cyan glow on hover. Ghost: border + text transition to Electric Cyan. Text link: → slides right.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Cards ─────────────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">04 · Cards</div>
+      <div class="bento">
+        <div class="card wide">
+          <div class="card-tag">Wide card · grid-column span 6</div>
+          <h3 class="display" style="margin-top:14px;">One Portal. Every connection licensed.</h3>
+          <p class="muted" style="margin-top:10px;font-size:15px;max-width:60ch;">Each solution opens a connection to the Portal. The Portal is where you configure, monitor, deploy, and bill. One license per connection — count licenses, not seats.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag">01 · Standard card · span 3</div>
+          <h3 class="display" style="margin-top:14px;">Fully white-labelled.</h3>
+          <p class="muted" style="margin-top:10px;font-size:15px;">Every pixel is yours — colors, type, illustrations, copy. Passengers see your carrier, not us.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag">02 · Standard card · span 3</div>
+          <h3 class="display" style="margin-top:14px;">Weeks to first kiosk.</h3>
+          <p class="muted" style="margin-top:10px;font-size:15px;">Low/mid-service experiences typically ship inside 6–8 weeks. Full-service with payments and biometrics: months.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:16px;" class="promo-grid">
+        <a href="#" class="promo-card">
+          <div class="promo-eyebrow mono">B2 · Bridge2to1</div>
+          <h3>Upgrade your CUSS 1 Check-In app. <span style="color:var(--accent);">Free.</span></h3>
+          <p class="muted" style="margin-top:12px;">Drop the bridge into your existing app bundle. Same code paths, now talking CUSS 2 — no rewrite, no risk.</p>
+          <span class="btn-text" style="margin-top:auto;">See how it works →</span>
+        </a>
+        <a href="#" class="promo-card">
+          <div class="promo-eyebrow mono">C2 · C2-Platform</div>
+          <h3>Run our platform on any hardware. <span style="color:var(--accent);">Free.</span></h3>
+          <p class="muted" style="margin-top:12px;">Bring a kiosk, a back-office machine, or any hardware you already own. Reports to the Portal, keeps you in control.</p>
+          <span class="btn-text" style="margin-top:auto;">Get started free →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Tags & Chips ──────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">05 · Tags & Chips</div>
+      <div class="card">
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div>
+            <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.1em;display:block;margin-bottom:12px;">TAGS</span>
+            <div class="row">
+              <span class="tag"><span class="dot"></span> Airports onboarding now</span>
+              <span class="tag">CUSS Task Force</span>
+              <span class="tag">IATA WG</span>
+              <span class="tag">Kiosk app</span>
+              <span class="tag">Most picked</span>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--line);padding-top:24px;">
+            <span class="mono" style="font-size:10px;color:var(--ink-3);letter-spacing:.1em;display:block;margin-bottom:12px;">CHIPS · MULTI-SELECT</span>
+            <div class="chips">
+              <div class="chip on">Elevated Tagging</div>
+              <div class="chip">Bridge2to1</div>
+              <div class="chip on">C2-Platform</div>
+              <div class="chip">Platform-Monitor</div>
+              <div class="chip">Airline</div>
+              <div class="chip on">Airport</div>
+              <div class="chip">Vendor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Form Elements ─────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">06 · Form Elements</div>
+      <div class="card">
+        <div class="form-grid">
+          <div class="field">
+            <label>Full name</label>
+            <input type="text" placeholder="Casey Rivera" />
+          </div>
+          <div class="field">
+            <label>Work email</label>
+            <input type="email" placeholder="casey@airline.com" />
+          </div>
+          <div class="field">
+            <label>Company</label>
+            <input type="text" placeholder="Your airline / airport / vendor" />
+          </div>
+          <div class="field">
+            <label>Current CUSS platform</label>
+            <select>
+              <option>SITA CUSS</option>
+              <option>Elevation</option>
+              <option>None / new build</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label>Anything we should know</label>
+            <textarea placeholder="Existing platform, certification deadlines, hardware vendors in play..."></textarea>
+          </div>
+          <div class="field full">
+            <label>Solutions of interest</label>
+            <div class="chips" style="margin-top:4px;">
+              <div class="chip on">Elevated Tagging</div>
+              <div class="chip">Bridge2to1</div>
+              <div class="chip">C2-Platform</div>
+              <div class="chip on">Platform-Monitor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Spec Rows ─────────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">07 · Spec Rows</div>
+      <div class="card">
+        {[
+          ['Standard',    'IATA RP 1706c · CUSS 2.4.x'],
+          ['Runtime',     'Deno TypeScript · zero JVM'],
+          ['Security',    'TLS 1.2+ · OAuth 2.0 · OWASP ASVS L2'],
+          ['Latency',     'P99 < 120ms peripheral round-trip'],
+          ['Licensing',   'Per machine, per account · revocable from Portal'],
+        ].map(([label, value]) => (
+          <div class="spec-row">
+            <div class="label">{label}</div>
+            <div>{value}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing Tiers ─────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">08 · Pricing Tiers</div>
+      <div class="pricing-grid">
+        <div class="tier">
+          <div class="tier-name">Free</div>
+          <div class="tier-price">
+            <span class="num">$0</span>
+            <span class="unit">/forever</span>
+          </div>
+          <p class="muted" style="font-size:14px;">All four solutions. Free, forever, for development, evaluation, and production pilots.</p>
+          <ul>
+            <li>1 license per solution, per account</li>
+            <li>All 4 solutions included</li>
+            <li>1 Portal user seat</li>
+            <li>Community support</li>
+            <li>30-day telemetry retention</li>
+          </ul>
+          <a href="#" class="btn btn-ghost" style="margin-top:auto;">Start free</a>
+        </div>
+        <div class="tier featured">
+          <div class="row" style="justify-content:space-between;">
+            <div class="tier-name" style="color:var(--accent);">Starter · popular</div>
+            <span class="tag"><span class="dot"></span> Most picked</span>
+          </div>
+          <div class="tier-price">
+            <span class="num">$49</span>
+            <span class="unit">/license/month</span>
+          </div>
+          <p class="muted" style="font-size:14px;">For real production — small fleets, single-airline apps, regional airports.</p>
+          <ul>
+            <li>Unlimited licenses, billed per active</li>
+            <li>Up to 10 Portal seats</li>
+            <li>Email + chat support · 4hr response</li>
+            <li>1 year telemetry retention</li>
+            <li>SSO via SAML</li>
+          </ul>
+          <a href="#" class="btn btn-primary" style="margin-top:auto;">Pick Starter</a>
+        </div>
+        <div class="tier">
+          <div class="tier-name">Enterprise</div>
+          <div class="tier-price">
+            <span class="num">Let's talk</span>
+          </div>
+          <p class="muted" style="font-size:14px;">For airport authorities, major carriers, fleet operators with > 50 connections.</p>
+          <ul>
+            <li>Volume pricing per license</li>
+            <li>Unlimited Portal seats</li>
+            <li>15-minute P1 SLA · named TAM</li>
+            <li>Forever telemetry retention</li>
+            <li>Single-tenant Portal option</li>
+          </ul>
+          <a href="#" class="btn btn-ghost" style="margin-top:auto;">Talk to us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ─────────────────────────────────────────────── -->
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">09 · Stats</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="big-num">2,000<span style="font-size:.4em;color:var(--ink-3);">+</span></div>
+          <div class="label" style="margin-top:8px;">Kiosks managed today</div>
+        </div>
+        <div class="stat">
+          <div class="big-num">69</div>
+          <div class="label" style="margin-top:8px;">Airport locations</div>
+        </div>
+        <div class="stat">
+          <div class="big-num">18</div>
+          <div class="label" style="margin-top:8px;">Countries</div>
+        </div>
+        <div class="stat">
+          <div class="big-num">6<span style="font-size:.4em;color:var(--ink-3);">+ yrs</span></div>
+          <div class="label" style="margin-top:8px;">In production</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Motion Tokens ─────────────────────────────────────── -->
+  <section style="padding-top:0;padding-bottom:clamp(64px,9vw,140px);">
+    <div class="wrap">
+      <div class="card-tag" style="margin-bottom:28px;">10 · Motion Tokens</div>
+      <div class="card">
+        {[
+          ['Page enter',              '350ms ease · opacity 0→1 + translateY(8px)→0'],
+          ['Interactive transitions', '150–250ms ease · buttons, borders, colors'],
+          ['Looping ambient',         '8–40s linear · marquee, kiosk scroll, world scan'],
+          ['City ping',               '2.6s ease-out infinite · scale(0.4)→scale(4), opacity 0.9→0'],
+          ['Swap word / panel',       '350–500ms ease · translateY(0.4em)→0 + opacity'],
+          ['Entrance offset',         'translateY(8px) → 0 with opacity · stagger via animation-delay'],
+        ].map(([label, value]) => (
+          <div class="spec-row">
+            <div class="label">{label}</div>
+            <div class="mono" style="font-size:12px;">{value}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Base>

@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import HomeHero from '../components/HomeHero.vue';
+import CTABand from '../components/CTABand.astro';
+import { productList } from '../data/products.js';
+---
+<Base
+  title="Elevation AI · CUSS 2 for airlines & airports"
+  description="Elevation AI builds the CUSS 2 infrastructure airports and airlines actually want to run. Modern self-service kiosks, hardware-agnostic platform, and universal monitoring — all from one portal."
+>
+  <HomeHero client:load />
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>IATA RP 1706c</span><span>Built for airlines</span><span>Built for airports</span><span>Hardware-agnostic</span><span>OAuth 2.0 · TLS 1.2+</span><span>Cloud-managed</span><span>Side-by-side CUSS 1+2</span>
+      <span>IATA RP 1706c</span><span>Built for airlines</span><span>Built for airports</span><span>Hardware-agnostic</span><span>OAuth 2.0 · TLS 1.2+</span><span>Cloud-managed</span><span>Side-by-side CUSS 1+2</span>
+    </div>
+  </div>
+
+  <section style="padding-top:48px; padding-bottom:0;">
+    <div class="wrap">
+      <div class="row" style="justify-content:space-between; align-items:baseline; margin-bottom:20px;">
+        <span class="mono" style="font-size:11px; color:var(--ink-3); letter-spacing:0.12em;">NO CARD · NO TRIAL</span>
+      </div>
+      <div class="promo-grid">
+        <a href="/solutions/bridge2to1" class="promo-card">
+          <div class="promo-eyebrow mono">B2 · Bridge2to1</div>
+          <h3>Upgrade your CUSS 1<br/>Check-In app. <span style="color:var(--accent);">Free.</span></h3>
+          <p class="muted" style="margin-top:12px;">Drop the bridge into your existing app bundle. Same code paths, now talking CUSS 2 — no rewrite, no risk.</p>
+          <span class="btn-text" style="margin-top:auto;">See how it works →</span>
+        </a>
+        <a href="/solutions/c2-platform" class="promo-card">
+          <div class="promo-eyebrow mono">C2 · C2-Platform</div>
+          <h3>Run our platform on<br/>any hardware. <span style="color:var(--accent);">Free.</span></h3>
+          <p class="muted" style="margin-top:12px;">Bring a kiosk, a back-office machine, or any hardware you already own. The platform installs on any device, reports to the Portal, and keeps you in control of your hardware choices.</p>
+          <span class="btn-text" style="margin-top:auto;">Get started free →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap">
+      <div class="split-2" style="margin-bottom:60px;">
+        <div>
+          <h2 class="display" style="margin-top:18px;">The right tool for where you are in the migration.</h2>
+        </div>
+        <p class="lead">Each solution addresses a specific challenge in the CUSS 2 migration. They work independently, and they all report to the same cloud Portal — so one dashboard covers your entire operation.</p>
+      </div>
+      <div class="product-grid">
+        {productList.map(p => (
+          <a href={`/solutions/${p.id}`} class="product-card">
+            <div class="row" style="justify-content:space-between; align-items:flex-start;">
+              <div class="pc-mark">{p.code}</div>
+              <span class="card-tag">{p.tag}</span>
+            </div>
+            <div>
+              <h3>{p.name}</h3>
+              <p class="muted" style="margin-top:8px; font-size:15px;">{p.summary}</p>
+            </div>
+            <div class="row" style="justify-content:space-between; margin-top:auto;">
+              <span class="mono" style="color:var(--accent);">{p.stat}</span>
+              <span class="btn-text">Read more</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="split-2">
+        <div>
+          <h2 class="display" style="margin-top:18px;">One Portal. Every connection licensed.</h2>
+          <p class="lead" style="margin-top:24px;">Each solution opens a connection to the Portal. The Portal is where you configure, monitor, deploy, and bill. One license per connection — count licenses, not seats.</p>
+          <div class="row" style="margin-top:32px;">
+            <a href="/pricing" class="btn btn-primary">See pricing</a>
+            <a href="/waitlist" class="btn btn-ghost">Get a license</a>
+          </div>
+        </div>
+        <div class="diagram">
+          <div style="text-align:center; padding: 18px; border:1px solid var(--accent); border-radius: 14px; background: var(--accent-soft); margin-bottom: 32px;">
+            <div class="mono" style="font-size:11px; color:var(--accent); letter-spacing:0.15em;">CLOUD PORTAL</div>
+            <div class="display" style="font-size:24px; margin-top:4px;">elevation.ai</div>
+            <div class="muted" style="font-size:12px; margin-top:4px;">Fleet · Telemetry · Licenses · Billing</div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+            {productList.map(p => (
+              <div style="padding:14px; background:var(--bg-3); border:1px solid var(--line); border-radius:10px;">
+                <div class="mono" style="font-size:10px; color:var(--ink-3); letter-spacing:0.12em;">{p.tag.toUpperCase()}</div>
+                <div style="font-weight:500; margin-top:4px;">{p.name}</div>
+                <div style="display:flex; align-items:center; gap:6px; margin-top:6px;">
+                  <span style="width:6px; height:6px; border-radius:50%; background:var(--good);" class="pulse"></span>
+                  <span class="mono" style="font-size:10px; color:var(--ink-3);">1 license</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div style="text-align:center; max-width: 700px; margin: 0 auto;">
+        <h2 class="display" style="margin-top:18px;">The CUSS 2 standard is technical.<br/>Your dashboard doesn't have to be.</h2>
+        <p class="lead" style="margin: 24px auto 0;">Plain-language documentation. Real-time status for every connection. A support team staffed by engineers who've deployed CUSS 2 in production.</p>
+      </div>
+      <div class="bento" style="margin-top:60px;">
+        <div class="card">
+          <div class="big-num">15<span style="font-size:.5em; color:var(--ink-3);">min</span></div>
+          <div class="muted" style="margin-top:12px; font-size:14px;">P1 incident response — written into every Enterprise contract.</div>
+        </div>
+        <div class="card">
+          <div class="big-num">99.97<span style="font-size:.5em; color:var(--ink-3);">%</span></div>
+          <div class="muted" style="margin-top:12px; font-size:14px;">Platform uptime across our managed fleet, 2025.</div>
+        </div>
+        <div class="card wide">
+          <h3 class="display">Licenses tied to machines, not contracts.</h3>
+          <p class="muted" style="margin-top:12px; max-width:60ch;">A license is one solution running on one machine, registered to your account. Issue them, revoke them, or reassign them between kiosks from the Portal — no support ticket required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABand />
+</Base>
